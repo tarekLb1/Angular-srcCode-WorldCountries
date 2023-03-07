@@ -1,0 +1,9 @@
+<div class="container mt-2">
+     
+<searchbar (selectoptionclick)="handleselectoptionemit($event)" 
+           [countriesselect]="Allcountiesselect"
+           [countries]="Allcountries" 
+           (searchbuttonclick)="handlesearchbaremit($event)">
+        </searchbar>
+<countries [countries]="Allcountries"></countries>
+</div>

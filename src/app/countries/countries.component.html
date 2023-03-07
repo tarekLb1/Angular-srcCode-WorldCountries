@@ -1,0 +1,10 @@
+<div class="row overflow-hidden">
+    <div class="col-6 col-xl-2 col-lg-3  col-md-4  col-sm-6" *ngFor="let c of countries">
+        <country 
+        [name]="c.name" 
+        [flagurl]="c.imgsrc"
+        [population]="c.population" ></country>
+    </div>
+    
+</div>
+

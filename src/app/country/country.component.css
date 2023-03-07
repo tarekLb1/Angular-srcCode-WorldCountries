@@ -1,0 +1,14 @@
+img {
+     height: 100px;
+    background-size: cover;
+}
+.green {
+    color: green;
+}
+
+.lowpopulation{
+    border: 3px solid green;
+}
+.highpopulation{
+    border: 3px solid red;
+}
