@@ -1,9 +1,8 @@
 <div class="container mt-2">
      
-<searchbar (selectoptionclick)="handleselectoptionemit($event)" 
-           [countriesselect]="Allcountiesselect"
+<searchbar 
            [countries]="Allcountries" 
            (searchbuttonclick)="handlesearchbaremit($event)">
         </searchbar>
-<countries [countries]="Allcountries"></countries>
+<countries [countries]="Filtercounties"></countries>
 </div>

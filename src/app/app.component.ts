@@ -7,47 +7,36 @@ import { country } from './Model/classcountry';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  Allcountiesselect: country[] = []
-  Allcountries:      country[] = []
+  
+  Allcountries: country[] = []
+  Filtercounties: country[] = []
+  FirstRun:boolean = true;
   //------------------------------
   constructor() {
-    this.getcountriesselect()
     this.getcountries();
   }
   //------------------------------
-  getcountriesselect() {
-    fetch('https://restcountries.com/v3.1/all')
-      .then(response => response.json())
-      .then(json => {
-
-        
-        json.forEach((element: any) => {
-          let c = new country()
-          c.name = element.name.common;
-          c.imgsrc = element.flags.png;
-          c.population = element.population;
-          this.Allcountiesselect.push(c);
-
-        });
-     })
-  }
+  
 
   getcountries() {
     fetch('https://restcountries.com/v3.1/all')
       .then(response => response.json())
       .then(json => { this.fillarray(json) })
   }
+
   fillarray(json: any) {
-    this.Allcountries = [];
+    //this.Allcountries = [];
+    this.Filtercounties=[];
     json.forEach((element: any) => {
       let c = new country()
       c.name = element.name.common;
       c.imgsrc = element.flags.png;
       c.population = element.population;
-      this.Allcountries.push(c);
+      if(this.FirstRun==true){this.Allcountries.push(c);} 
+      this.Filtercounties.push(c);
 
     });
-
+    this.FirstRun=false;
   }
 
   getcountrybyname(name: string) {
@@ -56,23 +45,11 @@ export class AppComponent {
       .then(json => { this.fillarray(json) })
   }
   
-   // handle @outpu calls
-
-           // select option call
-  //------------------------------
-  handleselectoptionemit(messagefromselectoption: string) {
-    if(messagefromselectoption == 'all'){
-      this.getcountries()
-    }
-    else {
-      this.getcountrybyname(messagefromselectoption)
-    }
-    
-  }
+   
          // search bar call
 //------------------------------
   handlesearchbaremit(messagefromsearchbar: string) {
-    if (messagefromsearchbar == '') {
+    if (messagefromsearchbar == '' || messagefromsearchbar=='all') {
       this.getcountries()
     }
     else {

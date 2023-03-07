@@ -1,16 +1,16 @@
 <nav class="p-3 bg-light navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
   <div class=" mx-auto d-flex">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <div class="d-flex" role="search">
-        <select class="form-select" (change)="emitcountrynameoption()" [(ngModel)]="countryNameoption">
-          <option selected value="all" >All</option>
-          <option   *ngFor="let c of countriesselect">{{c.name}}</option>
-        </select>
+         <select [(ngModel)]="countryName" (change)="emitoption()">
+          <option selected value="all">All</option>
+          <option   *ngFor="let c of countries" >{{c.name}}</option>
+         </select>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="countryName">
         <button class="btn btn-outline-success" type="submit" (click)="emitcountryname()">Search</button>
       </div>

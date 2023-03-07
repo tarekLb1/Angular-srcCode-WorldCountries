@@ -8,22 +8,14 @@ import { country } from '../Model/classcountry';
 })
 export class SearchbarComponent {
   @Input() countries: country[] = [];
-  @Input() countriesselect: country[] = [];
-
   @Output() searchbuttonclick = new EventEmitter<string>();
-  @Output() selectoptionclick = new EventEmitter<string>();
-
- countryNameoption = ''
- countryName = '';
+  countryName = '';
 
 
  emitcountryname(){
   this.searchbuttonclick.emit(this.countryName) 
  }
-
-
- 
- emitcountrynameoption(){
-  this.selectoptionclick.emit(this.countryNameoption)
+ emitoption(){
+  this.searchbuttonclick.emit(this.countryName) 
  }
 }
