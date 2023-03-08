@@ -1,4 +1,4 @@
-<div class="container mt-2">
+<div class="container bg-light mt-2">
      
 <searchbar 
            [countries]="Allcountries" 
@@ -7,10 +7,10 @@
 
         <table style="width: 100%;">
                 <tr style="width: 100%;">
-                        <td style="width: 80%;">
+                        <td style="width: 70%;">
                                 <countries [countries]="Filtercounties" (selectcountry)="handleselectcountry($event)"></countries>
                         </td>
-                        <td style="vertical-align: top; width: 20%;">
+                        <td style="vertical-align: top; width: 30%;">
                                 <country-details [Mycountry]="specificcountry"></country-details>
                         </td>
                 </tr>

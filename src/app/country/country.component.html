@@ -1,4 +1,4 @@
-<div class="card mt-5" style="height: 230px;" [ngClass]="{'highpopulation': population>100000 , 'lowpopulation': population< 100000}">
+<div class="card mt-5 overflow-hidden" style="height: 230px;" [ngClass]="{'highpopulation': population>100000 , 'lowpopulation': population< 100000}">
     <img class="card-img-top" [src]="flagurl" alt="Card image cap">
     <div class="card-body"  >
       <h5 class="card-title"  >{{name}}</h5>
