@@ -11,7 +11,7 @@
           <option selected value="all">All</option>
           <option   *ngFor="let c of countries" >{{c.name}}</option>
          </select>
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="countryName">
+        <input (change)="emitcountrytyping()" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="countryName">
         <button class="btn btn-outline-success" type="submit" (click)="emitcountryname()">Search</button>
       </div>
     </div>

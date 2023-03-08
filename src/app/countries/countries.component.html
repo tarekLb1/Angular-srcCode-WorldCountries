@@ -1,5 +1,5 @@
 <div class="row overflow-hidden">
-    <div class="col-6 col-xl-2 col-lg-3  col-md-4  col-sm-6" *ngFor="let c of countries">
+    <div class="col-6 col-xl-2 col-lg-3  col-md-4  col-sm-6" *ngFor="let c of countries" (click)="handlecountryclick(c)">
         <country 
         [name]="c.name" 
         [flagurl]="c.imgsrc"

@@ -4,5 +4,16 @@
            [countries]="Allcountries" 
            (searchbuttonclick)="handlesearchbaremit($event)">
         </searchbar>
-<countries [countries]="Filtercounties"></countries>
+
+        <table style="width: 100%;">
+                <tr style="width: 100%;">
+                        <td style="width: 80%;">
+                                <countries [countries]="Filtercounties" (selectcountry)="handleselectcountry($event)"></countries>
+                        </td>
+                        <td style="vertical-align: top; width: 20%;">
+                                <country-details [Mycountry]="specificcountry"></country-details>
+                        </td>
+                </tr>
+        </table>
+
 </div>

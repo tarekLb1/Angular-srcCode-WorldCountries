@@ -10,13 +10,29 @@ export class AppComponent {
   
   Allcountries: country[] = []
   Filtercounties: country[] = []
+  specificcountry:country = new country()
   FirstRun:boolean = true;
   //------------------------------
   constructor() {
     this.getcountries();
   }
   //------------------------------
-  
+  handleselectcountry(messagefromcountries:string){
+    this.getspecificcountry(messagefromcountries)
+  }
+
+  getspecificcountry(name: string) {
+    fetch(`https://restcountries.com/v3.1/name/${name}`)
+      .then(response => response.json())
+      .then(json => {
+        let c = json[0]
+        this.specificcountry= new country()
+        this.specificcountry.name = c.name.common;
+        this.specificcountry.imgsrc = c.flags.png;
+        this.specificcountry.population = c.population;
+        console.log( this.specificcountry)
+        })
+  }
 
   getcountries() {
     fetch('https://restcountries.com/v3.1/all')

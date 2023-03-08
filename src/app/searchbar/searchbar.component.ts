@@ -18,4 +18,7 @@ export class SearchbarComponent {
  emitoption(){
   this.searchbuttonclick.emit(this.countryName) 
  }
+ emitcountrytyping(){
+  this.searchbuttonclick.emit(this.countryName) 
+ }
 }

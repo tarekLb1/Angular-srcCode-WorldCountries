@@ -7,6 +7,7 @@ import { CountriesComponent } from './countries/countries.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { pluralise } from './pipes/pluralise';
 import { FormsModule } from '@angular/forms';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 
 
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     CountryComponent,
     CountriesComponent,
     SearchbarComponent,
-    pluralise
+    pluralise,
+    CountryDetailsComponent
     
   ],
   imports: [
