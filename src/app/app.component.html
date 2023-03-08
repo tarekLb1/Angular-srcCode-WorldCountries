@@ -1,19 +1,13 @@
 <div class="container bg-light mt-2">
-     
-<searchbar 
-           [countries]="Allcountries" 
-           (searchbuttonclick)="handlesearchbaremit($event)">
-        </searchbar>
+    <header>    </header>
+        <div class="d-flex justify-content-center align-items-center sticky-top">
+                <searchbar [countries]="Allcountries" (searchbuttonclick)="handlesearchbaremit($event)">
+                </searchbar>
+                <country-details [Mycountry]="specificcountry"></country-details>
+        </div>
 
-        <table style="width: 100%;">
-                <tr style="width: 100%;">
-                        <td style="width: 70%;">
-                                <countries [countries]="Filtercounties" (selectcountry)="handleselectcountry($event)"></countries>
-                        </td>
-                        <td style="vertical-align: top; width: 30%;">
-                                <country-details [Mycountry]="specificcountry"></country-details>
-                        </td>
-                </tr>
-        </table>
+
+        <countries [countries]="Filtercounties" (selectcountry)="handleselectcountry($event)"></countries>
+
 
 </div>

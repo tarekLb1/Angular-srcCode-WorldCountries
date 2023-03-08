@@ -8,6 +8,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { pluralise } from './pipes/pluralise';
 import { FormsModule } from '@angular/forms';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -20,7 +21,8 @@ import { CountryDetailsComponent } from './country-details/country-details.compo
     CountriesComponent,
     SearchbarComponent,
     pluralise,
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    HeaderComponent
     
   ],
   imports: [
