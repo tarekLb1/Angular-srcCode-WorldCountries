@@ -1,13 +1,1 @@
-<div class="container bg-light mt-2">
-    <header>    </header>
-        <div class="d-flex justify-content-center align-items-center sticky-top">
-                <searchbar [countries]="Allcountries" (searchbuttonclick)="handlesearchbaremit($event)">
-                </searchbar>
-                <country-details [Mycountry]="specificcountry"></country-details>
-        </div>
-
-
-        <countries [countries]="Filtercounties" (selectcountry)="handleselectcountry($event)"></countries>
-
-
-</div>
+<router-outlet></router-outlet>
