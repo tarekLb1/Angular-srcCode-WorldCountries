@@ -10,7 +10,7 @@ export class MyInterceptor implements HttpInterceptor {
       headers: httpRequest.headers.set('mhamad', 'rizk')
     });
 
-    console.log('Intercepted HTTP call', authReq);
+    //console.log('Intercepted HTTP call', authReq);
 
     return next.handle(authReq);
     console.log(authReq)

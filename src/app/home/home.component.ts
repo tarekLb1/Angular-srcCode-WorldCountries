@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { country } from '../Model/classcountry';
 import { commonsvc } from '../Model/Common';
-
+const { v4: uuidv4 } = require('uuid');
 
 @Component({
   selector: 'app-home',
@@ -35,7 +35,7 @@ export class HomeComponent {
         this.specificcountry.name = c.name.common;
         this.specificcountry.imgsrc = c.flags.png;
         this.specificcountry.population = c.population;
-        console.log( this.specificcountry)
+       // console.log( this.specificcountry)
     })
 
     // fetch(this.cmm.geturl(`name/${name}`))
@@ -81,6 +81,7 @@ export class HomeComponent {
     this.Filtercounties=[];
     json.forEach((element: any) => {
       let c = new country()
+      c.id = uuidv4();
       c.name = element.name.common;
       c.imgsrc = element.flags.png;
       c.population = element.population;

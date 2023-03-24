@@ -1,4 +1,7 @@
 import { Component,Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'country',
@@ -6,12 +9,17 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent {
+   @Input() id : string = '';
    @Input() name : string = '';
    @Input() description : string = '';
    @Input() flagurl : string = '';
    @Input() population: number = 0;
+   
+   constructor(private router:Router){}
 
    getpopulation(){
-    alert(this.population)
-   }
+    //alert(this.population)
+      this.router.navigate(['tarek',this.id])
+
+     }
 }
